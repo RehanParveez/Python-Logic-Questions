@@ -179,12 +179,12 @@
 #     def stop():
 #         print("car has stopped...")
 
-# class ToyatoCar(Car):
+# class ToyotaCar(Car):
 #     def __init__(self, name):
 #         self.name = name
 
-# car1 = ToyatoCar("fortuner")
-# car2 = ToyatoCar("prius")
+# car1 = ToyotaCar("fortuner")
+# car2 = ToyotaCar("prius")
 
 # print(car1.name)
 # print(car1.start())
@@ -207,19 +207,192 @@
 #     @staticmethod
 #     def stop():
 #         print("car has stopped...")
-
-# class ToyataCar(Car):
+  
+# class ToyotaCar(Car):
 #     def __init__(self, brand):
 #         self.brand = brand
 
-# class Fortuner(ToyataCar):
-#     def __init__(self, type):
+# class Fortuner(ToyotaCar):
+#     def __init__(self, car_type):
 #         super().__init__("Toyota")
-#         self.type = type
+#         self.type = car_type
 
 # car1 = Fortuner("diesel")
 
 # car1.start()
 # print(car1.brand)
 # print(car1.type)
+
+
+
+
+
+
+
+
+
+
+
+#######################                          19 Dec 2025                          #############################
+  
+
+# Super Method
+
+# class Car:
+    
+#     def __init__(self, car_type):
+#         self.type = car_type
+   
+#     @staticmethod
+#     def start():
+#         print("car has started...")
+
+#     @staticmethod
+#     def stop():
+#         print("car has stopped...")
+
+# class ToyataCar(Car):
+#     def __init__(self, name, car_type):
+#         super().__init__(car_type)
+#         self.name = name
+
+# car1 = ToyataCar("grande", "electric")
+# car1.start()
+# print(car1.type)
+
+
+
+
+
+
+
+# Class Methods
+
+# class Person:
+#     name = "anonymous"
+
+# #First Way
+
+#     # def changeName(self, name):
+#     #     self.__class__.name = "Rehan Parveez"
+
+# # Second Way
+
+#     @classmethod
+#     def changeName(cls, name):
+#         cls.name = name
+
+# p1 = Person()
+# p1.changeName("Rehan Parveez")
+# print(p1.name)
+# print(Person.name)
+
+
+
+
+
+
+
+
+# Improving Above Solved Practice Question About Transactions: Add Transaction Limits with Abstraction
+
+# Task:
+# Modify the Account class to include a daily transaction limit of Rs. 50,000.
+
+# If a credit or debit exceeds the limit, it should not process and should display an error message.
+
+
+# class Account:
+#      def __init__(self, bal, acc):
+#           self.balance = bal
+#           self.account_no = acc
+
+#      # Debit Card
+#      def debit(self, amount):
+#           if amount <= 50000:
+#                self.balance -= amount
+#                print("Transaction is Valid")
+#           else:
+#                print("Error, Transaction is not Valid")
+
+#           print("Rs.", amount, "was debited")    
+#           print("Total balance is =", self.get_balance())
+
+#     # Credit Card:
+#      def credit(self, amount):
+#       if amount <= 50000:
+#            self.balance += amount
+#            print("Transaction is valid")
+#       else:
+#            print("Transaction is not Valid")
+     
+#       print("Rs.", amount, "was credited")
+#       print("Total balance is =", self.get_balance())
+
+
+#      def get_balance(self):
+#            return self.balance
+
+# acc1 = Account(100000, 12345)
+# acc1.debit(45000)
+# acc1.credit(47000)
+# acc1.debit(3500)
+# acc1.credit(4700)
+# acc1.debit(55000)
+
+
+
+
+
+
+# Property Decorator
+
+# class Student:
+#    def __init__(self, phy, che, math):
+#       self.phy = phy
+#       self.che = che
+#       self.math = math
+
+
+# ##First Way
+  
+#    def calPercentage(self):
+#          self.percentage = str((self.phy + self.che + self.math) / 3) + "%"
+#          return self.percentage
+
+
+# ## Second Way
+
+#    # We use @property decorators on any method in the class to use the method as the property
+
+#    # @property   
+#    # def calPercentage(self):
+#    #    return str((self.phy + self.che + self.math) / 3) + "%"
+   
+# stud1 = Student(85, 87, 90)
+# print(stud1.calPercentage())
+
+# stud1.phy = 79
+# print(stud1.calPercentage())
+
+
+
+
+
+# Using Encapsultion Concept
+
+# class Account:
+#     def __init__(self, acc_no, acc_pass):
+#       self.acc_no = acc_no
+#       self.__acc_pass = acc_pass  
+
+#     def reset_pass(self):
+#        print(self.__acc_pass)
+
+# acc1 = Account("12345", "abcde")
+# print(acc1.acc_no)
+# print(acc1.__acc_pass)
+# print(acc1.reset_pass())
+
+
 

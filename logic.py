@@ -76,7 +76,7 @@
 # Create student class that takes name & marks of 3 subjects as arguments in constructor.
 # Then create a method to print the average
 
-# class Student():
+# class Student:
 
 #    def __init__(self, name, marks):
 #       self.name = name
@@ -241,7 +241,7 @@
 # class Car:
     
 #     def __init__(self, car_type):
-#         self.type = car_type
+#         self.car_type = car_type
    
 #     @staticmethod
 #     def start():
@@ -257,9 +257,9 @@
 #         self.name = name
 
 # car1 = ToyataCar("grande", "electric")
-# car1.start()
 # print(car1.type)
-
+# car1.start()
+# car1.stop()
 
 
 
@@ -283,10 +283,9 @@
 #         cls.name = name
 
 # p1 = Person()
-# p1.changeName("Rehan Parveez")
+# p1.changeName("David Attenborough")
 # print(p1.name)
 # print(Person.name)
-
 
 
 
@@ -311,34 +310,38 @@
 #      def debit(self, amount):
 #           if amount <= 50000:
 #                self.balance -= amount
-#                print("Transaction is Valid")
+#                print("Transaction is valid and completed")
 #           else:
-#                print("Error, Transaction is not Valid")
+#                print("Transaction is not valid nor completed")
 
 #           print("Rs.", amount, "was debited")    
-#           print("Total balance is =", self.get_balance())
+#           print("your remaining balance is", self.get_balance())
 
 #     # Credit Card:
 #      def credit(self, amount):
 #       if amount <= 50000:
 #            self.balance += amount
-#            print("Transaction is valid")
+#            print("Transaction is valid and completed")
 #       else:
-#            print("Transaction is not Valid")
+#            print("Transaction is not valid nor completed")
      
 #       print("Rs.", amount, "was credited")
-#       print("Total balance is =", self.get_balance())
-
+#       print("your updated balance is", self.get_balance())
 
 #      def get_balance(self):
 #            return self.balance
 
 # acc1 = Account(100000, 12345)
-# acc1.debit(45000)
+# print(acc1.account_no)
+# print(acc1.balance)
 # acc1.credit(47000)
-# acc1.debit(3500)
-# acc1.credit(4700)
-# acc1.debit(55000)
+# acc1.debit(45000)
+
+# acc2 = Account(50000000, 23423)
+# print(acc2.account_no)
+# print(acc2.balance)
+# acc2.debit(20000) 
+# acc2.credit(30000)
 
 
 
@@ -348,18 +351,17 @@
 # Property Decorator
 
 # class Student:
-#    def __init__(self, phy, che, math):
+#    def __init__(self, name, phy, che, math):
+#       self.name = name
 #       self.phy = phy
 #       self.che = che
 #       self.math = math
-
 
 # ##First Way
   
 #    def calPercentage(self):
 #          self.percentage = str((self.phy + self.che + self.math) / 3) + "%"
 #          return self.percentage
-
 
 # ## Second Way
 
@@ -369,11 +371,18 @@
 #    # def calPercentage(self):
 #    #    return str((self.phy + self.che + self.math) / 3) + "%"
    
-# stud1 = Student(85, 87, 90)
+# stud1 = Student('Mubashir', 85, 87, 90)
 # print(stud1.calPercentage())
 
 # stud1.phy = 79
 # print(stud1.calPercentage())
+
+# # for @property method
+# # stud1 = Student('Mubashir', 85, 87, 90)
+# # print(stud1.calPercentage)
+   
+# # stud1.phy = 79
+# # print(stud1.calPercentage)
 
 
 
@@ -393,6 +402,238 @@
 # print(acc1.acc_no)
 # print(acc1.__acc_pass)
 # print(acc1.reset_pass())
+
+
+# class Account:
+#    def __init__(self, acc_no, acc_pass):
+#       self.acc_no = acc_no
+#       self.__acc_pass = acc_pass
+      
+#    def reset_pass(self):
+#       return self.__acc_pass
+   
+# acc1 = Account('12345', 'abcde')
+# print(acc1.acc_no)
+# print(acc1.__acc_pass)
+# acc1.reset_pass()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################                          22 Dec 2025                          #############################
+      
+      
+# Inheritance Based
+
+# Qs. Define a Employee class with attributes department, organization & designation. This class is also have a showDetails()
+#  method.
+# Create an Engineer class that inherits properties from Employee & has additional attributes: name & age.
+
+
+# class Employee:
+#    def __init__(self, department, organization, designation):
+#       self.department = department
+#       self.organization = organization
+#       self.designation = designation
+   
+      
+#    def showDetails(self):
+#         print("Department:", self.department)
+#         print("Organization :", self.organization)
+#         print("Designation :", self.designation)
+        
+# class Engineer(Employee):
+#    def __init__(self, name, age):
+#       self.name = name
+#       self.age = age
+#       super().__init__('Engineer', 'LDA', 'SDO')
+      
+# eng1 = Engineer('M. Zeeshan', 25)
+# print(eng1.name) 
+# print(eng1.age)
+# eng1.showDetails()
+      
+      
+      
+      
+
+# class Complex:
+#    def __init__(self, real, img):
+#       self.real = real
+#       self.img = img
+      
+#    def showNumber(self):
+#       print(self.real, 'i +', self.img, 'j')
+      
+#    def __add__(self, num2):
+#       newReal = self.real + num2.real
+#       newImg = self.img + num2.img
+#       return Complex(newReal, newImg)
+      
+#    def __sub__(self, num2):
+#       newReal = self.real - num2.real
+#       newImg = self.img - num2.img
+#       return Complex(newReal, newImg)
+      
+# num1 = Complex(1, 3)
+# num1.showNumber()
+
+# num2 = Complex(5, 4)
+# num2.showNumber()
+
+# num3 = num1 + num2
+# num3.showNumber()
+
+# num4 = num1 - num2
+# num4.showNumber()
+
+
+
+
+# def numType(num):
+#    if num % 2 == 0:
+#       print("num is even")
+#    else:
+#       print("num is odd")
+#    print([1, 2, 3] + [4, 5, 6]) # concatenating
+
+# numType(4)
+
+
+
+
+
+# Program TO Convert USD TO INR
+
+# def convert(usd_val):
+#     pkr_val = usd_val * 280
+#     print(usd_val, "USD =", pkr_val, "PKR")
+    
+# convert(50)
+
+
+
+
+
+# Qs. Define a Circle class to create a circle with radius r using the constructor.
+# Define an Area) method of the class which calculates the area of the circle.
+#  Define a Perimeter method of the class which allows you to calculate the perimeter of the circle.
+
+
+# class Circle:
+#     def __init__(self, radius):
+#         self.radius = radius
+ 
+#     def area(self):
+#         return (22/7) * (self.radius ** 2)
+    
+#     def perimeter(self):
+#         return 2 * (22/7) * self.radius
+    
+# c1 = Circle(21)
+# print(c1.area())
+# print(c1.perimeter())
+
+
+
+
+
+# WAF TO PRINT THE ELEMENT OF A LIST IN SINGLE LINE
+
+
+# Names = ['rehan', 'zeeshan', 'arslan']
+# Profession = ["Developer", "Engineer", "Doctor"]
+
+# print(Names[0], end=" ")
+# print(Names[1], end=" ")
+# print(Names[2], end=" ")
+
+# def list_length(list):
+#     print(len(list))
+
+# list_length(Names)
+# list_length(Profession)
+
+
+
+
+
+# Given a list of 6 elements, swap the second and second-last elements.
+
+# orig_list = [10, 20, 30, 40, 50, 60]
+# print("Before Swapping orig_list[1], orig_list[-2]:", orig_list[1], orig_list[-2])
+# orig_list[1], orig_list[-2] = orig_list[-2], orig_list[1]
+# print("After Swapping orig_list[1], orig_list[-2]:", orig_list[1], orig_list[-2])
+
+
+
+
+# # Extract and print the second and fourth elements using indexing (not slicing).
+
+# original_list = [10, 20, 30, 40, 50]
+
+# # Extracting elements at specific indices
+# indices_to_extract = [1, 3]
+# extract_elements = [original_list[i] for i in indices_to_extract]
+# print(f"Extracted Elements: {extract_elements}")
+
+
+# # Extracting elements based on a condition
+# filtered_elements = [x for x in original_list if x > 25]
+# print(f"Filtered_elemnts: {filtered_elements}")
+
+
+
+
+      
+# Code to Replace the middle element of a list with 0 of any list items length (Even or Odd)
+
+# list1 = [100, 200, 300, 400, 500, 600, 700, 800]
+
+# length = len(list1)
+# mid = length // 2
+
+# if length % 2 == 0:
+#     print("Before Middle Elements:", list1[mid-1], list1[mid])
+    
+#     list1[mid - 1] = 0
+#     list1[mid] = 0
+    
+#     print("After Middle Elements:", list1[mid-1], list1[mid])
+
+# else:
+#     print("Before Middle Element:", list1[mid])
+    
+#     list1[mid] = 0
+    
+#     print("After Middle Element:", list1[mid])
+
+
+
+
+
+
+
+       
+
+      
+      
+      
+
+
+      
+
+
 
 
 

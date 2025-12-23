@@ -624,16 +624,187 @@
 
 
 
-       
 
+
+
+
+
+
+
+
+
+
+
+
+#######################                          23 Dec 2025                          #############################
+
+
+# Nested if Statement with else Condition
+
+# Example
+
+# num = 12
+# print("num:", num)
+
+# if num % 2 == 0 and num % 3 == 0:
+#     print("Divisible by num 2 and 3")
+
+# elif num % 2 == 0:
+#   print("Divisible by num 2 not by 3")
+
+# elif num % 3 == 0:
+#     print("Divisible by num 3 not by 2")
+
+# else:
+#    print("Not Divisible by num 2 and 3")
+
+
+
+
+
+#  Problem check If a Name Exists in the List:
+
+# You are given a list of names (strings) and a target name.
+# Search the list and tell if the target name exists in the list or not.
+
+
+# def list_names(arr, target):
+#     for i in range(len(arr)):
+#         if(arr[i] == target):
+#             return True
+#     else:
+#         return False
+    
+# names = ["Naseem", "Sajid", "Arslan", "Zeeshan", "Rehan"]
+# target = "Sajid"
+# index = list_names(names, target)
+# print("Found at Index:" if index == True else "Not Found", index)
+
+
+
+
+#example usage of zip and dict combine
+
+# a = [2, 3, 5]
+# b = ['arslan', 'zeeshan', 'rehan']
+# print(a,b)
+# pracice = list(zip(a,b))
+# print(pracice)
+# print(dict(pracice))
+
+
+
+
+
+# Q handling prime numbers and simple multiplication of numbers which aren't prime numbers
+
+# for num in range(10, 20):
+#     for i in range(2, num):
+#         if num%i == 0:
+#             j = num/i
+#             print("%d equals %d * %d" % (num,i,j))
+#             break
+#         else:
+#             print(num, "is a prime number")
+#             break
+
+
+
+
+#  Problem find the Last Occurrence of a Target Number:
+
+# You are given a list of integers and a target number.
+# Find the last index at which the target occurs in the list.
+# If it doesn’t occur, return -1.
+
+# def list_num(arr, target):
+#     last_index = -1
+#     for i in range(len(arr)):
+#         if(arr[i] == target):
+#             last_index = i
+#     return last_index
+
+# num = [2, 3, 4, 5, 7, 5]
+
+# target = 5
+# index = list_num(num, target)
+# print("Founda at index:" if index != -1 else "Not Found", index)
+
+
+
+
+
+# What if the same num exists at two indexes then write logic to count both the indexes
+
+# def list_num(arr, target):
+#    last_index = -1
+#    indexs = []
+#    for i in range(len(arr)):
+#       if(arr[i] == target):
+#          last_index = i
+#          indexs.append(i)
+#    return last_index, indexs
+
+# num = [2, 3, 4, 5, 6, 7, 5]
+# target = 5
+# last_index, indexs = list_num(num, target)
+
+# if last_index != -1:
+#    print("found at index:", indexs)
+#    print("full count:", len(indexs))
+#    print('last_position:', last_index)
+
+
+
+
+
+# Question
+
+# You are given words. Some words may repeat. For each word, output its number of occurrences.
+# The output order should correspond with the input order of appearance of the word.
       
+# words = ['apple', 'banana', 'apple', 'banana', 'banana', 'mango']
+
+# unique = []
+# count = []
+
+# for w in words:
+#     if w not in unique:
+#         unique.append(w)
+#         count.append(1)
+#     else:
+#         index = unique.index(w)
+#         count[index] += 1
+
+# print(unique, count)
+
+
+
+
+
+# Complete the function that accepts a string parameter, and reverses each word in the string.
+# All spaces in the string should be retained.
+
+# def reverse_words(string):
+#     result = ""
+#     word = ""
+
+#     for ch in string:
+#         if ch != " ":
+#             word += ch
+#         else:
+#             result += word[::-1] + " "
+#             word = ""
+
+#     result += word[::-1]   # last word
+#     return result
+ 
+# # took help of chatgpt in this mainly for like how to reverse each word instead of whole string, means keeping the correct
+# # order of the entered strings while just reversing words
+ 
+# print(reverse_words("Abdus Salam was the first Pakistani who won nobel prize in Physics")) 
+
+
+
+ 
       
-      
-
-
-      
-
-
-
-
-

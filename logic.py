@@ -808,3 +808,224 @@
 
  
       
+      
+      
+      
+      
+      
+      
+      
+      
+#######################                          24 Dec 2025                          #############################
+      
+      
+      
+      
+# Practicing File Handling in Python
+
+# Example 1
+
+# file = open("example.txt", "w")
+# file = open("example.txt", "r")
+# file = open("example.txt", "a")
+# file = open("example.txt", "rb")
+
+
+
+# Example 2
+
+# fo = open("foo.txt", "wb")
+# print("enter a name", fo.name)
+# print("closed or not", fo.closed)
+# print("opening mode", fo.mode)
+# fo.close()
+
+
+
+
+
+
+# Reading a File in Python
+
+# Example: Using read() method
+
+# with open("example.txt", "r") as file:
+#     content = file.read()
+#     print(content)
+
+
+
+# Example: Using readline() method
+
+# with open("example.txt", "r") as file:
+#     line = file.readline()
+# while line:
+#     print("line", end='')
+#     line = file.readline()
+
+
+
+
+
+
+# Example: Using readlines() method
+
+# with open("example.txt", "r")as file:
+#     line = file.readline()
+# for lines in line:
+#     print("line", end='')
+
+
+
+
+
+
+# Writing to a File in Python
+
+# Example: Using the write() method
+
+# with open("foo.txt", "w") as file:
+#   line = file.write("Hello World")
+#   print(line)
+#   print("Content added Successfully")
+
+
+
+
+
+
+# Example: Using the writelines() method
+
+# with open("example.txt", "w")as file:
+#  file.writelines(["Hello\n", "World\n", "Python\n"])
+
+# with open("example.txt", "r") as file:
+#     lines = file.readlines()
+
+# for line in lines:
+#     print(line, end='')
+
+
+
+
+
+
+
+# PYTHON FILE HANDLING LEARNING CSV USE:
+
+
+# import csv
+
+# name = input("Enter your Name")
+# age = input("Enter your age")
+# roll_no = input("Enter your roll no")
+
+
+# with open('data.csv', 'a', newline='') as file:
+#     writer = csv.writer(file)
+#     writer.writerow([name, age, roll_no])
+
+# with open('data.csv', 'r') as file:
+#     data = csv.reader(file)
+#     for row in data:
+#         print(row)
+
+
+
+
+
+# How to read a CSV file into a Dictionary in Python
+
+
+# import csv
+
+# name = input("Enter your name")
+# age = input("Enter your age")
+# roll_no = input("Enter your roll no")
+
+# with open("data1.csv", "a", newline="") as file:
+#     print(f"\n{name},{age},{roll_no}")
+
+# with open("data1.csv", "r") as file:
+#     reader = csv.DictReader(file, fieldnames = ['Name', 'Age', 'roll_no'])
+#     for line in reader:
+#         print(line)
+
+
+
+
+
+
+
+
+# Writing CSV file using csv module
+
+# import csv
+
+# data = ["month", "1959", "1960", "1961"]
+
+# x = [
+# ["Jan", "358", "359", "360"],
+# ["Feb", "458", "459", "460"],
+# ["Mar", "558", "559", "560"],
+# ["Apr", "658", "659", "660"],
+# ["May", "758", "759", "760"],
+# ["June", "858", "859", "860"],
+# ["July", "958", "959", "960"],
+# ["Aug", "1058", "1059", "1060"],
+# ["Sep", "1158", "1159", "1160"]
+# ]
+
+# y = "file.csv"
+# with open(y, "w") as work:
+#  z = csv.writer(work)
+#  z.writerow(data)
+#  z.writerows(x)
+
+
+
+
+
+
+# import csv
+
+# with open("names.csv", "r") as csv_file:
+#     csv_reader = csv.DictReader(csv_file)
+
+#     with open("new_names.csv", "w", newline="") as new_file:
+#         fieldNames = ['first_names', 'last_names']
+#         csv_writer = csv.DictWriter(new_file, fieldnames=fieldNames, delimiter='\t')
+
+#         csv_writer.writeheader()
+
+#         for line in csv_reader:
+#             del line['email']
+#             csv_writer.writerow(line)
+
+
+
+# Q
+
+# import csv
+
+# # Asking user for new header names
+
+# first_name = input("Enter header for first name")
+# last_name = input("Enter header for last name")
+# parents = input("Enter header for email")
+
+# with open("names.csv", "r") as csv_file:
+#     csv_reader = csv.DictReader(csv_file)
+
+#     with open("new_names.csv", "w", newline="") as new_file:
+#         fieldnames = [first_name, last_name, parents]
+#         csv_writer = csv.DictWriter(new_file, fieldnames=fieldnames)
+
+#         csv_writer.writeheader()
+
+#         for line in csv_reader:
+#             csv_writer.writerow({
+#                 first_name: line['first_names'],
+#                 last_name: line['last_names'],
+#                 parents: line['email']
+#             })

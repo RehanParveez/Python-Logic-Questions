@@ -843,8 +843,6 @@
 
 
 
-
-
 # Reading a File in Python
 
 # Example: Using read() method
@@ -866,15 +864,12 @@
 
 
 
-
-
 # Example: Using readlines() method
 
 # with open("example.txt", "r")as file:
 #     line = file.readline()
 # for lines in line:
 #     print("line", end='')
-
 
 
 
@@ -892,8 +887,6 @@
 
 
 
-
-
 # Example: Using the writelines() method
 
 # with open("example.txt", "w")as file:
@@ -904,8 +897,6 @@
 
 # for line in lines:
 #     print(line, end='')
-
-
 
 
 
@@ -933,7 +924,6 @@
 
 
 
-
 # How to read a CSV file into a Dictionary in Python
 
 
@@ -950,9 +940,6 @@
 #     reader = csv.DictReader(file, fieldnames = ['Name', 'Age', 'roll_no'])
 #     for line in reader:
 #         print(line)
-
-
-
 
 
 
@@ -1029,3 +1016,187 @@
 #                 last_name: line['last_names'],
 #                 parents: line['email']
 #             })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################                          25 Dec 2025                          #############################
+
+
+# simple to do list 
+
+# tasks = []
+
+# while True:
+#     print("\n--- To-do List---")
+#     print("1. Add Task")
+#     print("2. View task")
+#     print("3. Remove task")
+#     print("4. Exit")
+
+#     choice = input("enter your choice number(1-4)")
+
+#     if choice == '1':
+#         task = input("enter your task")
+#         tasks.append(task)
+#         print("task added successfully")
+    
+#     elif choice == '2':
+#         print("\nYour Tasks")
+#         if len(tasks) == 0:
+#             print("no task found")
+#         else:
+#             for i, t in enumerate(tasks):
+#                 print(f"{i+1} {t}")
+#         input("\nclick enter to return to menu")
+
+#     elif choice == '3':
+#         print("Remove our task")
+#         for i, t in enumerate(tasks):
+#             print(f"{i+1}{t}")
+            
+#         if len(tasks) > 0:
+#             try:
+#                 task_num = int(input("enter your task"))
+#                 if 1 <= task_num <= len(tasks):
+#                   removed = tasks.pop(task_num - 1)
+#                   print(f"remove task: {removed}")
+#                 else:
+#                     print("wrong task number")
+#             except ValueError:
+#                 print("your task number is not correct")
+
+#         else:
+#             print("enter task again")
+#     elif choice == '4':
+#         print("Exit! no task to peroform")
+#         break
+    
+#     else:
+#         print("wrong choice, enter task again")
+
+
+
+
+
+
+
+
+
+
+# Student Class
+
+# class Student:
+#     def __init__(self, name, roll_number, marks):
+#         self.name = name
+#         self.roll_number = roll_number
+#         self.marks = marks
+
+#     def show_info(self):
+#         print("Name:", self.name)
+#         print("Roll Number:", self.roll_number)
+#         print("Marks:", self.marks)
+
+#         # Manually calculate average
+#         total = 0
+#         for mark in self.marks:
+#             total = total + mark
+
+#         subjects = len(self.marks)
+#         if subjects != 0:
+#             average = total / subjects
+#         else:
+#             average = 0
+
+#         print("Average Marks:", average)
+
+#         # Check if passed in all subjects
+#         passed = True
+#         for mark in self.marks:
+#             if mark < 40:
+#                 passed = False
+
+#         if passed == True:
+#             print("Result: Pass")
+#         else:
+#             print("Result: Fail")
+
+#         print("------------------------")
+
+        
+#  # ClassRoom Class
+ 
+# class ClassRoom:
+#     def __init__(self):
+#         self.students = []
+
+#     def add_student(self, student):
+#         self.students.append(student)
+
+#     def show_all_students(self):
+#         if len(self.students) == 0:
+#             print("No students in the class")
+#         else:
+#             for student in self.students:
+#                 student.show_info()
+
+
+# # Main Program
+
+# classroom = ClassRoom()
+
+# while True:
+#     print("---- MENU -----")
+#     print("1. Add New Student")
+#     print("2. Show All Students")
+#     print("3. Exit")
+#     print("--------------")
+
+#     choice = input("Enter your choice (1, 2 or 3):")
+
+#     if choice == "1":
+#         name = input("enter student name:")
+#         roll = input("enter roll number:")
+
+#         sub_count = input("how many subjects?")
+#         sub_count = int(sub_count)
+
+#         marks = []
+#         for i in range(sub_count):
+#             mark = input("enter marks for subject " + str(i+1) + ": ")
+#             mark = int(mark)
+#             marks.append(mark)
+
+#         student = Student(name, roll, marks)
+#         classroom.add_student(student)
+
+#     elif choice == "2":
+#         classroom.show_all_students()
+#         input('click enter to go to main menu')
+
+#     elif choice == "3":
+#         print("exiting program")
+#         break
+
+#     else:
+#         print("wrong choice, Please enter 1, 2 or 3")
+
+
+
+
+

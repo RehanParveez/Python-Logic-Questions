@@ -1200,3 +1200,304 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################                          26 Dec 2025                          #############################
+
+
+
+
+# RECURSION IN PYTHON:
+
+# def show(n):
+#     if n == 0:
+#         return
+#     print(n)
+#     show(n-1)
+#     print("End")
+# show(5)
+
+
+
+
+# def sum_n(n):
+#     if n == 1:
+#         return 1
+#     else:
+#         return n + sum_n(n - 1)
+# print(sum_n(8))
+
+
+
+
+# def fact(n):
+#     if n==0 or n==1:
+#         return 1
+#     else:
+#         return n * fact(n - 1)
+# print(fact(5))
+
+
+
+# def fact(n):
+#     if n == 0 or n == 1:
+#      return 1
+#     return fact(n-1) * n
+       
+# print(fact(4))
+
+
+
+
+
+
+# WRITE A RECURSIVE FUNCTION TO CALCULATE THE SUM OF FIRST n NATURAL NUMBERS
+
+# def sum_nat(n):
+#     if n == 1:
+#         return 1
+#     else:
+#         return sum_nat(n-1) + n
+    
+# print(sum_nat(6))
+
+
+
+
+
+# WRITE A RECURSIVE FUNCTION TO PRINT ALL ELEMENTS IN A LIST.
+# HINT: USE THE LIST AND INDEX AS PARAMETERS
+
+# def print_ele(my_list, index):
+#     if index >= len(my_list):
+#         return
+#     else:
+#         print(my_list[index])
+#         return print_ele(my_list, index + 1)
+# print_ele([2, 4, 6, 7, 8, 9, 11], 2)
+
+
+
+
+
+
+
+# Example1 - Q1 Related: If we have two recursive functions in Python and we set the limit or condition
+#  (like assigning default values), can we give different default values for both?
+
+# def count_down(n = 5):
+#     if n == 0:
+#         return
+#     print(n)
+#     return count_down(n - 1)
+
+# def count_up(n = 1, limit = 5):
+#     if n > limit:
+#         return
+#     print(n)
+#     return (count_up(n + 1, limit))
+
+# count_down()
+# print("----")
+# count_up()
+
+
+
+
+
+# Running in Series (One after Another)
+#  Yes, you can call one recursive function and then call the second one after it finishes.
+
+
+
+# Running in Series
+
+# def count_down(n = 3):
+#     if n == 0:
+#         return
+#     print("Down:", n)
+#     count_down(n - 1)
+
+# def count_up(n=1, limit=3):
+#     if n > limit:
+#         return
+#     print("Up:", n)
+#     count_up(n+1, limit)
+
+# count_down()
+# print("----")
+# count_up()
+
+
+
+
+
+
+# Running in Parallel - Example using threading (for learning only):
+
+
+# import threading
+
+# def count_down(n=4):
+#     if n == 0:
+#         return
+#     print("Down:", n)
+#     return count_down(n - 1)
+
+# def count_up(n=1, limit=4):
+#     if n > limit:
+#         return
+#     print("Up:", n)
+#     return count_up(n+1, limit)
+
+# count_down()
+# print("====")
+# count_up()
+
+# t1 = threading.Thread(target=count_down)
+# t2 = threading.Thread(target=count_up)
+
+# t1.start()
+# t2.start()
+
+# t1.join()
+# t2.join()
+
+
+
+
+
+
+
+# Multi-threading
+
+# Example in Python:
+
+# import threading
+
+# def task1():
+#  print("running task 1")
+
+# def task2():
+#  print("running task 2")
+
+# t1 = threading.Thread(target=task1)
+# t2 = threading.Thread(target=task2)
+
+# t1.start()
+# t2.start()
+
+# t1.join()
+# t2.join()
+
+
+
+# import _thread
+# import time
+
+# def print_name(name, *arg):
+#     print(name, *arg)
+
+# name = "Tutorialspoint..."
+
+# _thread.start_new_thread(print_name, (name, 1))
+# _thread.start_new_thread(print_name, (name, 2))
+
+# time.sleep(0.5)
+
+
+
+
+# import threading
+# import time
+
+# def print_name(name, *args):
+#     print(name, *args)
+
+# name = "Tutorialspoint..."
+
+# thread1 = threading.Thread(target = print_name, args = (name, 1))
+# thread2 = threading.Thread(target = print_name, args = (name, 1, 2))
+
+# thread1.start()
+# thread2.start()
+
+# # Waiting for thread to complete
+# thread1.join()
+# thread2.join()
+
+# print("threads are finished... exiting")
+
+# time.sleep(5)
+
+
+
+
+
+
+
+# import threading
+# import time
+
+# class myThread (threading.Thread):
+#     def __init__(self, threadID, name, counter):
+#         threading.Thread.__init__(self)
+#         self.threadID = threadID
+#         self.name = name
+#         self.counter = counter
+
+#     def run(self):
+#         print("Starting " + self.name)
+
+#          # Getting lock to synchronize threads
+
+#         threadLock.acquire()
+#         print_time(self.name, self.counter, 3)
+
+#           # Freeing lock to release next thread
+#         threadLock.release()
+    
+# def print_time(threadName, delay, counter):
+#         while counter:
+#          time.sleep(delay)
+#          print("%s: %s" % (threadName, time.ctime(time.time())))
+#          counter -= 1
+
+# threadLock = threading.Lock()
+# threads = []
+
+#     # Creating new threads
+
+# thread1 = myThread(1, "Thread-1", 1)
+# thread2 = myThread(2, "Thread-2", 2)
+
+#     # Starting new Threads
+
+# thread1.start()
+# thread2.start()
+
+#     # Adding threads to thread list
+
+# threads.append(thread1)
+# threads.append(thread2)
+
+#     # Waiting for all threads to complete
+
+# for t in threads:
+#     t.join()
+# print("exiting main thread")

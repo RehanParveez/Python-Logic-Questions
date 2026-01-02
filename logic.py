@@ -1221,7 +1221,6 @@
 
 
 
-
 # RECURSION IN PYTHON:
 
 # def show(n):
@@ -1231,7 +1230,6 @@
 #     show(n-1)
 #     print("End")
 # show(5)
-
 
 
 
@@ -1253,13 +1251,22 @@
 # print(fact(5))
 
 
+# def fact(n):
+#    if n==0 or n==1:
+#       return 1
+#    else:
+#       return n * fact(n - 1)
+# print(fact(5))
+
+
 
 # def fact(n):
 #     if n == 0 or n == 1:
 #      return 1
 #     return fact(n-1) * n
-       
 # print(fact(4))
+       
+
 
 
 
@@ -1292,6 +1299,18 @@
 # print_ele([2, 4, 6, 7, 8, 9, 11], 2)
 
 
+
+
+# n = 5
+# for i in range(n):
+#    print(' ' * (i+1) + '*' *(n-i))
+   
+
+# for i in range(1, 10, 2):
+#    print(' ' * ((10 - i) // 2) + '*' * i)
+# for y in range(7, 0, -2):
+#    print(' ' * ((10 - y) // 2) + '*' * y)
+   
 
 
 
@@ -1501,3 +1520,182 @@
 # for t in threads:
 #     t.join()
 # print("exiting main thread")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################                          2 Jan 2025                          ############################
+
+
+
+# simple code without calling the methods and full functionalities
+
+# Q Mobile Phone Class (OOP)
+
+
+# class MobilePhone:
+#     def __init__(self, brand, model, release_year, screen_size, resolution, display_type,
+#                  ram, storage, processor, battery, cameras, megapixels,
+#                  connectivity, os_name, os_version):
+#         self.brand = brand
+#         self.model = model
+#         self.release_year = release_year
+#         self.screen_size = screen_size
+#         self.resolution = resolution
+#         self.display_type = display_type
+#         self.ram = ram
+#         self.storage = storage
+#         self.processor = processor
+#         self.battery = battery
+#         self.cameras = cameras
+#         self.megapixels = megapixels
+#         self.connectivity = connectivity
+#         self.os_name = os_name
+#         self.os_version = os_version
+
+#     def display_info(self):
+#         print("Brand:", self.brand)
+#         print("Model:", self.model)
+#         print("Release Year:", self.release_year)
+#         print("Screen Size:", self.screen_size)
+#         print("Resolution:", self.resolution)
+#         print("Display Type:", self.display_type)
+#         print("RAM:", self.ram, "GB")
+#         print("Storage:", self.storage, "GB")
+#         print("Processor:", self.processor)
+#         print("Battery:", self.battery, "mAh")
+#         print("Cameras:", self.cameras)
+#         print("Main Camera:", self.megapixels, "MP")
+#         print("Connectivity:", self.connectivity)
+#         print("OS:", self.os_name, self.os_version)
+
+#     def update_os(self, new_version):
+#         self.os_version = new_version
+
+#     def is_5g_capable(self):
+#         for item in self.connectivity:
+#             if item == "5G":
+#                 return True
+#         return False
+
+#     def storage_available(self, used_space):
+#         return self.storage - used_space
+
+#     def phone_age(self, current_year):
+#         return current_year - self.release_year
+
+
+# Q – Remove Duplicates & Sort
+
+
+# def remove_duplicates(lst):
+#     new_list = []
+#     for i in lst:
+#         found = False
+#         for j in new_list:
+#             if i == j:
+#                 found = True
+#         if not found:
+#             new_list.append(i)
+
+#     # simple sorting
+#     for i in range(len(new_list)):
+#         for j in range(i + 1, len(new_list)):
+#             if new_list[i] > new_list[j]:
+#                 temp = new_list[i]
+#                 new_list[i] = new_list[j]
+#                 new_list[j] = temp
+
+#     return new_list
+ 
+# print(remove_duplicates([1, 3, 4, 5, 5, 6]))
+
+
+
+
+# Q4 – Flatten Nested List
+
+
+# def flatten_list(nested):
+#     flat = []
+#     for sub in nested:
+#         for item in sub:
+#             flat.append(item)
+#     return flat
+
+
+
+# Q  Square Only Even Numbers
+
+
+# def square_even_numbers(numbers):
+#     result = []
+#     for num in numbers:
+#         if num % 2 == 0:
+#             result.append(num * num)
+#     return result
+# print(square_even_numbers([2, 3, 4, 5, 6]))
+
+
+# Q  Palindrome Checker
+
+
+# def is_palindrome(text):
+#     clean = ""
+#     for ch in text:
+#         if ch != " ":
+#             if ch >= 'A' and ch <= 'Z':
+#                 clean = clean + chr(ord(ch) + 32)
+#             else:
+#                 clean = clean + ch
+
+#     start = 0
+#     end = len(clean) - 1
+#     while start < end:
+#         if clean[start] != clean[end]:
+#             return False
+#         start += 1
+#         end -= 1
+#     return True
+
+# print(is_palindrome('lionisthekingofjungle'))
+
+
+
+
+
+# Q Second Largest Number
+
+
+# def second_largest(lst):
+#     largest = lst[0]
+#     second = lst[0]
+
+#     for num in lst:
+#         if num > largest:
+#             second = largest
+#             largest = num
+#         elif num != largest and num > second:
+#             second = num
+#     return second
+ 
+# print(second_largest([10, 20, 40, 15, 30]))
+
+
+# Q Multiplication Table
+
+# def multiplication_table(num):
+#     for i in range(1, 11):
+#         print(num, "x", i, "=", num * i)
+        
+# print(multiplication_table(13))

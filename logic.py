@@ -1594,6 +1594,17 @@
 #     def phone_age(self, current_year):
 #         return current_year - self.release_year
 
+# m1 = MobilePhone(brand="Samsung", model="Galaxy S23", release_year=2023, screen_size="6.1 inches", resolution="2340x1080",
+#     display_type="AMOLED", ram=8, storage=128, processor="Snapdragon 8 Gen 2", battery=3900, cameras=["Front 12MP", "Rear 50MP+10MP+12MP"],
+#     megapixels=50, connectivity=["4G", "5G", "WiFi"], os_name="Android", os_version="13")
+
+
+# print("Phone Info:", m1.display_info())
+# print(m1.update_os("14"))
+# print("Is 5G Capable?", m1.is_5g_capable())
+# print("Available Storage after using 50GB:", m1.storage_available(50), "GB")
+# print("Phone Age in 2026:", m1.phone_age(2026))
+
 
 # Q – Remove Duplicates & Sort
 
@@ -1699,3 +1710,92 @@
 #         print(num, "x", i, "=", num * i)
         
 # print(multiplication_table(13))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#######################                          5 Jan 2025                          ############################
+
+
+
+# Q # You are given a list of students, where each student is represented as a dictionary containing:
+# # ● name: Student name (string)
+# # ● scores: A list of exam scores (list of integers)
+# # ● active: Whether the student is currently active (boolean)
+# # Data Structure
+
+# # Task
+# # Write a function get_honor_roll(data, threshold) that returns a list of student names based on the following rules:
+
+
+# students_data = [
+# {"name": "Alice", "scores": [85, 90, 88], "active": True},
+# {"name": "Bob", "scores": [70, 65, 72], "active": True},
+# {"name": "Charlie", "scores": [95, 100], "active": False},
+# {"name": "David", "scores": [60, 50, 65], "active": True},
+# {"name": "Eve", "scores": [], "active": True} 
+# ]
+
+# def get_honor_roll(data, limit):
+#    result = []
+#    for student in data:
+#       if student["active"] == True:
+#          scores = student["scores"]
+#          if len(scores) == 0:
+#             continue
+#          total = 0
+#          for s in scores:
+#             total = total + s
+#          average = total / len(scores)
+#          if average > limit:
+#             result.append(student["name"])
+#    return result
+
+# print(get_honor_roll(students_data, 85))
+
+
+
+
+
+
+# Q # Fruit Stand Inventory
+# # You are managing an inventory list where each item is represented by a dictionary containing:
+# # ● item: Name of the fruit
+# # ● price: Price of that item
+# # Some fruits appear multiple times due to different shipments or prices.
+# # Data Structure
+
+# inventory = [
+# {"item": "Apple", "price": 10},
+# {"item": "Banana", "price": 5},
+# {"item": "Apple", "price": 12},
+# {"item": "Orange", "price": 8},
+# {"item": "Banana", "price": 7}
+# ]
+
+# def group_and_sum(data):
+#    fruits = {}
+   
+#    for i in data:
+#       name = i["item"]
+#       price = i["price"]
+      
+#       if name in fruits:
+#          fruits[name] = fruits[name] + price
+#       else:
+#          fruits[name] = price
+#    return fruits
+
+# print(group_and_sum(inventory))
+      
